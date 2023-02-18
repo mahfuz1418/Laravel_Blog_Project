@@ -94,11 +94,11 @@
                                     <li class="post-date"> <span class="line"></span> {{ \Carbon\Carbon::parse($post->created_at)->format('M d,Y') }}</li>
                                 </ul>
                                 <h5 class="entry-title">
-                                    <a href="post-single.html">{{ $post->post_title }}</a>
+                                    <a href="{{ route('showpost', ["id" => $post->id]) }}">{{ $post->post_title }}</a>
                                 </h5>
 
                                 <div class="post-btn">
-                                    <a href="post-single.html" class="btn-read-more">Continue Reading <i
+                                    <a href="{{ route('showpost', ["id" => $post->id]) }}" class="btn-read-more">Continue Reading <i
                                             class="las la-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>

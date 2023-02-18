@@ -46,4 +46,11 @@ class FrontendController extends Controller
         $posts = Post::where("post_kind", "popular")->limit(4)->get();
         return view('frontend.search', compact('search_data', 'search_query', 'count', 'categories', 'tags','posts'));
     }
+    public function showpost(Request $request)
+    {
+        return view('frontend.single_page',[
+            'single_post' => Post::where("id", $request->id)->first(),
+
+        ]);
+    }
 }
